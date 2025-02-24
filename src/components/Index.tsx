@@ -42,7 +42,7 @@ const Index = () => {
       }
     };
     fetchPokemons();
-  }, [dispatch]);
+  }, []);
 
   const handleAddPokemon = () => {
     if (name.trim() && ability.trim()) {
@@ -58,7 +58,7 @@ const Index = () => {
 
   return (
     <div className="flex">
-      <div className="inp">
+      <div className="left-side">
         <input
           type="text"
           placeholder="Enter pokemon name"
@@ -77,27 +77,29 @@ const Index = () => {
         <br />
         <button onClick={handleAddPokemon}>Add</button>
       </div>
-
-      <ul className="table">
-        {pokemons.map((pokemon) => (
-          <table>
-            <li key={pokemon.id}>
-              <tr>
-                <td>{pokemon.name}</td>
-                <td>
-                  {" "}
-                  <button
-                    className="btn"
-                    onClick={() => handleDetails(pokemon.id)}
-                  >
-                    View Details
-                  </button>
-                </td>
-              </tr>
-            </li>
-          </table>
-        ))}
-      </ul>
+      <div className="right-side">
+        {" "}
+        <ul className="table">
+          {pokemons.map((pokemon) => (
+            <table>
+              <li key={pokemon.id}>
+                <tr>
+                  <td>{pokemon.name}</td>
+                  <td>
+                    {" "}
+                    <button
+                      className="btn"
+                      onClick={() => handleDetails(pokemon.id)}
+                    >
+                      View Details
+                    </button>
+                  </td>
+                </tr>
+              </li>
+            </table>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

@@ -37,21 +37,25 @@
   color: #888;
 }
 .flex {
-  margin-left: 20dvb;
-  margin-right: 20dvb;
   display: flex;
-  justify-content: space-between;
-  align-self: flex-start;
+
+  height: 100vh;
 }
 
 .btn {
-  margin-left: 50dvh;
+  margin-left: 40dvh;
   padding: 1dvh;
 }
 
-.inp {
-  margin-left: 0;
-  padding-left: 0;
-  align-content: flex-start;
-  place-self: left;
+.left-side {
+  flex: 1;
+  position: relative;
+  margin-top: 40vh;
+}
+
+.right-side {
+  flex: 1;
+  overflow: auto;
+  background-color: aqua;
+  width: 150vh;
 }
